@@ -21,7 +21,7 @@ router.get('/cp',(req,res)=>{
         username: 'admin',
         rank: 1,
         password: 'admin',
-        profile_id :""
+        profile_id :"5b998e743e755b227c1aaff1"
     });
     User.createUser(newUser,(err,user)=>{
         if(err) throw err;
