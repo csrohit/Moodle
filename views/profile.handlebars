@@ -1,0 +1,79 @@
+{{> header}}
+
+<body>
+    <nav>
+        {{> nav}}
+        {{#if success_msg}}
+            <div id="modal">
+                <div class="modal-content msg success_msg">
+                    <p>{{ success_msg }}</p>
+                </div>
+            </div>
+        {{/if}}
+        {{#if error_msg}}
+            <div id="modal">
+                <div class="modal-content msg error_msg">
+                    <p>{{ error_msg }}</p>
+                </div>
+            </div>
+        {{/if}}
+    </nav>
+    <section class="section-profile">
+        <h2>Profile</h2>
+        <div class="details">
+            <h3>details</h3>
+            {{#if profile.subject}}
+                <div class="profile-details">
+                    <div class="field">
+                        Name : <input type="text" name="name" value="{{ profile.name }}" >
+                    </div>
+                    <div class="field">
+                        Username : {{#ifCond user.rank '2'}} {{ username }} {{else}} {{ user.username}} {{/ifCond}}
+                    </div>
+                    <div class="field">
+                        User type : Professor
+                    </div>
+                    <div class="field">
+                        Email : {{ profile.email }}
+                    </div>
+                    <div class="field">
+                        Subject : {{ profile.subject }}
+                    </div>
+                </div>
+            {{ else }}
+                <div id="profile_block" class="profile-details">
+                    <div class="field">
+                        Name : <input type="text" name="name" value="{{ profile.name }}" id="name" disabled>
+                    </div>
+                    <div class="field">
+                        Username : {{#ifCond user.rank '2'}} {{ username }} {{else}} {{ user.username}} {{/ifCond}}
+                    </div>
+                    <div class="field">
+                        User type : Student
+                    </div>
+                    <div class="field">
+                        Email : {{ profile.email }}
+                    </div>
+                    <div class="field">
+                        Roll no. : {{ profile.roll_no }}
+                    </div>
+                    <div class="field">
+                        Year : {{ profile.year }}
+                    </div>
+                    <div class="field">
+                        Branch : {{ profile.branch }}
+                    </div>
+                </div>
+            {{/if}}
+            <div class="field">
+                {{#ifCond user.rank '2'}}
+                    <button id="edit_profile" onclick="profile.fetch()">Edit Profile</button>
+                    <button id="reset_password" onclick="password.fetch()">Reset Password</button>
+                {{else}}
+                    <a href="/users/pwd"><button>Change Password</button></a>
+                {{/ifCond}}
+            </div>
+        </div>
+        <div id="result"></div>
+    </section>
+    {{>footer}}

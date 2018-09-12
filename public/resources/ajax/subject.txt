@@ -1,0 +1,17 @@
+<form method="post" action="javascript:addSubject.add()">
+    <h3>Add Subject</h3>
+    <div class="input-field">
+        <label for="name">Name : </label><br>
+        <input type="text" name="name" placeholder="name...">
+    </div>
+    <div class="input-field">
+        <label for="sub_code">Subject Code</label>
+        <input type="number" name="sub_code" min="31" max="36">
+    </div>
+<!--        <div class="input-field">
+        <label for="topics">Topics</label>
+        <textarea name="topics"  cols="30" rows="10"></textarea>
+    </div>-->
+    <div class="input-field">
+        <button type="submit" name="reg_sub" value="Register">Register</button></div>
+</form>

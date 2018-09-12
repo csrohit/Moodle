@@ -1,0 +1,29 @@
+{{>header}}
+<body>
+    <nav>
+        {{>nav}}
+    </nav>
+    <section id="notice-board">
+        <h1>Notice Board</h1>
+        <div class="row">
+            <div class="col span-1-of-4">
+                {{#if user.rank}}
+                <a href="javascript:notice.fetch()">Post a Notice</a>
+                {{/if}}
+            </div>
+            <div class="col span-2-of-4" id="result">
+                    {{#each notices}}
+                <div class="card">
+                        <h3>{{ this.title }}</h3>
+                        <p>{{ this.content}}
+                            <br>
+                            <br>Branch : Electronics and Telecommunications
+                            <br>For : {{#if for_rank}}Teachers {{else}} Teachers and Students {{/if}}
+                        </p>
+                </div>
+                    {{/each}}
+
+            </div>
+        </div>
+    </section>
+    {{>footer}}

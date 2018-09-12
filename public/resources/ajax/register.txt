@@ -1,0 +1,59 @@
+    <form method="post" name="regUser" action="/users/register">    <h3>Register</h3>
+        <div class="input-field">
+            <label for="name">Name : </label><br>
+            <input type="text" name="name" placeholder="name...">
+        </div>
+        <div class="input-field">
+            <label for="email">Email : </label><br>
+            <input type="email" name="email" placeholder="email...">
+        </div>
+        <div class="input-field">
+            <label for="username">Username:</label><br>
+            <input type="text" name="username" placeholder="username...">
+        </div>
+        
+<!--        Fork-->
+        <div class="input-field">
+            <label for="">Rank : </label>
+            &nbsp;&nbsp;<input type="radio" name="rank" class="rank" onChange="checkRank()" value="1">&nbsp;&nbsp;&nbsp;&nbsp;<label for="">Professor</label>&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" name="rank" class="rank" onChange="checkRank()" value="0" checked>&nbsp;&nbsp;&nbsp;&nbsp;<label for="">Student</label></div>
+      
+        
+<!--        For Faculty -->
+       <div class="input-field teacher">
+          <label for="subject">Subject</label>
+           <select name="subject">
+               <option value="31">Engineering Mathematics III</option>
+               <option value="32">Integrated Circuits</option>
+               <option value="33">Control System</option>
+               <option value="34">Analog Communication</option>
+               <option value="35">Object Oriented Programming</option>
+               <option value="36">Employability Skill Development</option>
+           </select>
+       </div>       
+       
+<!--       For Students     -->      
+        <div class="input-field student">
+            <label for="branch">Branch</label><br>
+                    <select name="branch">
+                        <option value="1" selected>Electronics and Telecommunications</option>
+                        <option value="2">Information Technology</option>
+                        <option value="3">Computer Science</option>
+                    </select>
+        </div>
+        <div class="input-field student">
+            <label for="year">Year</label><br>
+                    <select name="year">
+                        <option value="1">FE</option>
+                        <option value="2" selected>SE</option>
+                        <option value="3">TE</option>
+                        <option value="4">BE</option>
+                    </select>
+        </div>
+        <div class="input-field student">
+            <label for="roll_no">Roll no.</label>
+            <input type="number" name="roll_no" min="1" max="80" value="57">
+        </div>
+<!--        Fork ends-->
+        <div class="input-field"><button type="submit" name="reg-submit" value="Register">Register</button></div>
+    </form>

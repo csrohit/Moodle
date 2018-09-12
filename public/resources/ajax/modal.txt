@@ -1,0 +1,20 @@
+<div id="modal">
+    <form action="/users/pwd" class="modal-content" method="post">
+        <h3>Change Password</h3>
+        <div class="input-field">
+            <label for="oldPassword">Current Password</label>
+            <input type="password" name="oldPassword">
+        </div>
+        <div class="input-field">
+            <label for="newPassword">New password</label>
+            <input type="password" name="newPassword">
+        </div>
+        <div class="input-field">
+            <label for="confPassword">Confirm Password</label>
+            <input type="password" name="confPassword">
+        </div>
+        <div class="input-field">
+            <button type="submit">Change</button>
+        </div>
+    </form>
+</div>

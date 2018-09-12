@@ -1,0 +1,56 @@
+{{> header }}
+
+<body>
+    <header id="profile-header" class="clearfix">
+        {{> nav}} {{#if success_msg}}
+        <div id="modal">
+            <div class="modal-content msg success_msg">
+                <p>{{ success_msg }}</p>
+            </div>
+        </div>
+        {{/if}} {{#if error_msg}}
+            <div id="modal">
+                <div class="modal-content msg error_msg">
+                    <p>{{ error_msg }}</p>
+                </div>
+            </div>
+        {{/if}}
+        <div class="clearfix hero-text-box">
+            <h1>Dashboard</h1>
+            <p class="hero-desc">Here's everything you need.</p>
+            <a class="btn btn-full"  href="/users/notice_board">Notice board</a> {{#ifCond user.rank '0'}}
+            <a class="btn btn-ghost" href="#mycourses">My Courses</a> {{else}} {{#ifCond user.rank '1'}}
+            <a class="btn btn-ghost" href="#mycourse">My Course</a> {{else}}
+            <a class="btn btn-ghost" href="#cpanel">CPanel</a> {{/ifCond}} {{/ifCond}}
+        </div>
+    </header>
+    {{#ifCond user.rank '2'}}
+    <section>
+        <h2>Control Panel</h2>
+        <div id="cpanel" class="row">
+            <div id="admin-links" class="col span-1-of-4 panel">
+                <ol>
+                    <li><a href="javascript:fetchUsers(2)">List Users</a></li>
+                    <li><a href="javascript:addUser.fetchTemplate()">Add User</a></li>
+                    <li><a href="javascript:fetchUsers(1)">Show Teachers</a></li>
+                    <li><a href="javascript:fetchUsers(0)">Show Students</a></li>
+                    <li><a href="javascript:addSubject.fetch()">Add Subject</a></li>
+                    <li><a href="javascript:notice.fetch()">Post Notice</a></li>
+                    <li><a href="javascript:void()">Edit Database</a></li>
+                    <li><a href="javascript:void()">Edit Database</a></li>
+                </ol>
+            </div>
+            <div id="result" class="col span-3-of-4 panel">
+            </div>
+        </div>
+    </section>
+    {{/ifCond}}
+    <section id="notice-board">
+    
+    </section>
+    {{#ifCond user.rank '1'}}
+    <section id="mycourse">
+        fsbsbsbdvdvbsrbetenetnetne
+    </section>
+
+    {{/ifCond}} {{> footer}}

@@ -1,0 +1,51 @@
+{{>header}}
+<body>
+    <nav>
+        {{>nav}}
+    </nav>
+    <section class="section-header clearfix">
+        <h1>Moodle Forum</h1>
+    </section>
+    <section>
+        <div class="panel card" id="left-panel">
+            <a href="/users/forum?action=newPost">New Post</a>
+        </div>
+
+
+        <div class="panel" id="feed">
+             {{#each posts}}
+            <div class="card" id="{{this._id}}">
+                <div class="card-header">
+                    {{this.title}}
+                </div>
+                <div class="card-body">
+                    {{this.desc}}
+                </div>
+                <div class="row card-footer">
+                    <a id="card[{{@index}}]" href="javascript:comments.show({{@index}})">Comments</a>
+                    <div class="comment">
+                        <input type="text" name="txt" id="comment_body" placeholder="Write a Comment...">
+                        <input onclick="comments.add({{@index}})" type="button" value="post">
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+
+
+        <div class="panel card" id="right-panel">
+            <a href="javascript:void()">Other Links</a>    
+        </div>
+
+
+
+
+
+
+
+
+
+
+    </section>
+{{>footer}}

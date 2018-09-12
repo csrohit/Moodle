@@ -1,0 +1,70 @@
+{{>header}}
+<body>
+<nav>
+{{>nav}}
+</nav>
+
+<section class="section-header">
+    <h1>Create a new Post</h1>
+</section>
+
+<section>
+    <form action="/users/post" method="post">
+        <h3> Ask the community ...</h3>
+        <br>
+        <div class="input-field">
+            <label for="title">Title : </label>
+            <input type="text" name="title" placeholder="title of the post....">
+        </div>
+        <div class="input-field">
+            <label for="subject">Subject</label>
+            <select name="subject">
+                <option value="31">Engineering Mathematics III</option>
+                <option value="32">Integrated Circuits</option>
+                <option value="33">Control System</option>
+                <option value="34">Analog Communication</option>
+                <option value="35">Object Oriented Programming</option>
+                <option value="36">Employability Skill Development</option>
+                <option value="0">None</option>
+            </select>
+        </div>
+        <div class="input-field">
+            <label for="branch">Branch</label>
+            <br>
+            <select name="branch">
+                <option value="1" selected>Electronics and Telecommunications</option>
+                <option value="2">Information Technology</option>
+                <option value="3">Computer Science</option>
+                <option value="0">None</option>
+            </select>
+        </div>
+        <div class="input-field">
+            <label for="year">Year</label>
+            <br>
+            <select name="year">
+                <option value="1">FE</option>
+                <option value="2" selected>SE</option>
+                <option value="3">TE</option>
+                <option value="4">BE</option>
+                <option value="0">None</option>
+            </select>
+        </div>
+        <div class="input-field">
+            <label for="">Rank : </label>
+            &nbsp;&nbsp;
+            <input type="radio" name="rank" class="rank" onChange="checkRank()" value="1">&nbsp;&nbsp;&nbsp;&nbsp;
+            <label for="">Professor</label>&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" name="rank" class="rank" onChange="checkRank()" value="0" checked>&nbsp;&nbsp;&nbsp;&nbsp;
+            <label for="">Student</label>
+        </div>
+        <div class="input-field">
+            <label for="desc">description : </label>
+            <br>
+            <textarea name="desc" id="desc" cols="30" rows="10">dfhejrjrj</textarea>
+        </div>
+        <div class="input-field">
+            <button>post</button>
+        </div>
+    </form>
+</section>
+        {{>footer}}

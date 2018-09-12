@@ -1,0 +1,33 @@
+
+<form method="post" id="notice-form" action="javascript:notice.post()">
+    <h3>Post a Notice</h3>
+    <div class="input-field">
+        <label for="title">Title : </label><br>
+        <input type="text" name="title" value="g">
+    </div>
+    <div class="input-field">
+        <label for="notice-content">Content : </label> <br>
+        <textarea name="notice_content" id="notice-content" cols="30" rows="5">Sample Content</textarea>
+    </div>
+        <div class="input-field student">
+            <label for="branch">Branch</label>
+            <br>
+            <select name="branch">
+                <option value="1" selected>Electronics and Telecommunications</option>
+                <option value="2">Information Technology</option>
+                <option value="3">Computer Science</option>
+                <option value="4">All Branches</option>
+            </select>
+        </div>
+        <div class="input-field student">
+            <label for="for_rank">Branch</label>
+            <br>
+            <select name="for_rank">
+                <option value="0" selected>Teachers and Students</option>
+                <option value="1">Teachers</option>
+            </select>
+        </div>
+    <div class="input-field">
+        <button type="submit" name="reg_notice" value="Post">Post</button></div>
+</form>
+

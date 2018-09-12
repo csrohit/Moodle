@@ -1,0 +1,75 @@
+{{> header}}
+
+<body>
+   <nav class="clearfix"> {{> nav}} 
+   
+   
+   
+   
+           {{#if success_msg}}
+            <div id="modal">
+                <div class="modal-content msg success_msg">
+                    <p>{{ success_msg }}</p>
+                </div>
+            </div>
+        {{/if}}
+        {{#if error_msg}}
+            <div id="modal">
+                <div class="modal-content msg error_msg">
+                    <p>{{ error_msg }}</p>
+                </div>
+            </div>
+        {{/if}}
+   
+   
+   
+   </nav>
+   
+   
+   
+
+   
+   
+   
+   
+<div class="form-container">
+    <form method="post" action="/users/login">
+    <h1>log in</h1>
+        <div class="input-field">
+            <label for="username">Username:</label><br>
+            <input type="text" name="username">
+        </div>
+        <div class="input-field">
+            <label for="password">Password</label><br>
+            <input type="password" name="password">
+        </div>
+        <div class="input-field">
+        <button type="submit" name="login-submit">Log in</button><br>
+        </div>
+    </form>
+
+</div>
+{{> footer}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
